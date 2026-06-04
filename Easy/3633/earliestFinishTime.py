@@ -12,7 +12,7 @@ def earliestFinishTime(landStartTime: List[int], landDuration: List[int], waterS
             if landFinishTime <= waterStartTime[j] or waterFinishTime <= landStartTime[i]:
                 FinishTime = max(landFinishTime, waterFinishTime)
             else:
-                FinishTime = max(landFinishTime + waterDuration[j], waterFinishTime + landDuration[i]) 
+                FinishTime = min(landFinishTime + waterDuration[j], waterFinishTime + landDuration[i]) 
             minFinishTime = min(minFinishTime, FinishTime)   
     
     return minFinishTime
